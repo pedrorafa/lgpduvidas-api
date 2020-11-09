@@ -1,8 +1,8 @@
-## Desenvolvimento e Aplicação de um Chatbot para Facilitar a Compreensão da LGPD 
+# Desenvolvimento e Aplicação de um Chatbot para Facilitar a Compreensão da LGPD 
 
 Autores (as): Eduarda Queiroga da Silva1, Luiz Fernando Parra Lourenço1, Pedro Rafael dos Santos1 e Wesley Almeida Silva1  
 
-# Orientador (a): Prof. Me. Gabriel Lara Baptista 
+## Orientador (a): Prof. Me. Gabriel Lara Baptista 
 
 # Resumo 
 
