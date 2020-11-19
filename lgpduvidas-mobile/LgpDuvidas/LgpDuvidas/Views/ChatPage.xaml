@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LgpDuvidas.Views.ChatPage"
+             xmlns:local="clr-namespace:LgpDuvidas.CustomCells"
+             xmlns:vm="clr-namespace:LgpDuvidas.ViewModels">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SelectorMessageTemplate x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:ChatViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <ScrollView Orientation="Vertical" MinimumWidthRequest="1000">
+            <ListView 
+                x:Name="MessagesListView" 
+                ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                ItemsSource="{Binding Messages}" 
+                HasUnevenRows="True"
+                SeparatorVisibility="None" 
+                IsEnabled="True"/>
+        </ScrollView>
+        <StackLayout Orientation="Horizontal" 
+                     BackgroundColor="White" 
+                     VerticalOptions="EndAndExpand"
+                     HeightRequest="50">
+            <Entry 
+                    HorizontalOptions="FillAndExpand"  
+                    Placeholder="Pergunta..."  
+                    Text="{Binding input}" Keyboard="Chat" Margin="4" />
+            <Image Source="send.png" WidthRequest="40" HeightRequest="40" Margin="4" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Command="{Binding SendMessage}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
